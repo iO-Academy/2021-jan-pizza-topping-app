@@ -11,10 +11,17 @@ const mongoSetting = {
 }
 mongoClient.Promise = Promise
 app.get('/', function(request, response) {
-    mongoClient.connect(mongoUrl, mongoSettings, (error, client ) => {
+    mongoClient.connect(mongoUrl, mongoSetting, async (error, client ) => {
         console.log('Connected')
-        const pizzaCollection
+        const pizzaCollection = client.db('pizza-app').collection('pizza-toppings')
+        const individualPizza = await pizzaCollection.find({}).toArray()
+
+        response.send({
+            success: true,
+            message: 'Successfully retrieved all the individual pizzas',
+            data: individualPizza
         })
+    })
 })
 
 app.listen(port, () => {
