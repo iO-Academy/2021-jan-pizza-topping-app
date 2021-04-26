@@ -182,8 +182,8 @@
   "_id": {
     "$oid": "608688348bd31885b62dc862"
   },
-  "categories__id": null,
-  "categories__name": "",
+  "categories__id": 18,
+  "categories__name": "Cheese",
   "toppings__name": "Mozarella",
   "toppings__img": "images/mozeralla.jpg",
   "toppings__category": "3"
@@ -191,8 +191,8 @@
   "_id": {
     "$oid": "608688348bd31885b62dc863"
   },
-  "categories__id": null,
-  "categories__name": "",
+  "categories__id": 19,
+  "categories__name": "Cheese",
   "toppings__name": "Parmesan",
   "toppings__img": "images/parmesan.jpeg",
   "toppings__category": "3"
@@ -200,8 +200,8 @@
   "_id": {
     "$oid": "608688348bd31885b62dc864"
   },
-  "categories__id": null,
-  "categories__name": "",
+  "categories__id": 20,
+  "categories__name": "Cheese",
   "toppings__name": "Blue cheese",
   "toppings__img": "images/blue-cheese.jpg",
   "toppings__category": "3"
