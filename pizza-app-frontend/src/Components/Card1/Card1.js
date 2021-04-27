@@ -9,14 +9,17 @@ class Card1 extends React.Component {
 
     render() {
         return (
-<div>
-            <div className="card1">
-                <p>blablah</p>
+            <Wrapper>
+                <div>
+                    <div className="card1">
+                     <p>blablah</p>
+                </div>
+
+             <div className="card2">
+                    <p>whwhwhwhwhw whwhwhw</p>
+             </div>
             </div>
-    <div className="card2">
-        <p>whwhwhwhwhw whwhwhw</p>
-    </div>
-</div>
+            </Wrapper>
 
         )
     }
