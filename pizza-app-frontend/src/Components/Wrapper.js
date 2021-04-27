@@ -1,4 +1,5 @@
-import React from 'react';import './wrapper.css';
+import React from 'react';
+import './wrapper.css';
 
 class Wrapper extends React.Component {
     render() {
