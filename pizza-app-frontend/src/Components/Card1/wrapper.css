@@ -1,4 +1,6 @@
 .mainWrapper {
-    display: inline-block;
+    display: flex;
     size: 500px;
+    flex-direction: row;
+    justify-content: space-around;
 }
