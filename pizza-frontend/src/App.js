@@ -1,5 +1,24 @@
+import React from 'react';
+import getAllPizzas from './service/service.js';
 import logo from './logo.svg';
 import './App.css';
+
+class Pizzas extends React.Component{
+    constructor(props){
+    super(props);
+    this.state = {
+        pizzaData: getAllPizzas()
+    }
+   }
+    render(){
+    return(
+        <div>
+                Pizza Data: {this.state.getAllPizzas}
+        </div>
+    )
+    }
+}
+
 
 function App() {
   return (
@@ -22,4 +41,4 @@ function App() {
   );
 }
 
-export default App;
+export default Pizzas;
