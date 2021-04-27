@@ -24,8 +24,8 @@ app.get('/', function(request, response) {
             }
 
         response.send({
-            success: true,
-            message: 'Successfully retrieved all the randomised pizzas',
+//            success: true,
+//            message: 'Successfully retrieved all the randomised pizzas',
 //            arrayOfPizzas: individualPizza
             arrayOfShuffledPizzas: results
         })
