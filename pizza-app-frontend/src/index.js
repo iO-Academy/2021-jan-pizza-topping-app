@@ -4,10 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Header from './Components/Header/Header.js';
+import Footer from "./Components/Footer/Footer";
+import Card1 from "./Components/Card1/Card1";
+import Card2 from "./Components/Card2/Card2";
 
 ReactDOM.render(
   <React.StrictMode>
     <Header />
+    <Footer />
+    <Card1 />
+    <Card2 />
   </React.StrictMode>,
   document.getElementById('root')
 );
