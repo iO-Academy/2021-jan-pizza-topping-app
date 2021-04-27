@@ -2,14 +2,15 @@ const express = require('express');
 const mongoClient = require('mongodb').MongoClient;
 
 const app = express();
-const port = 3001;
+const port = 3000;
 
 const mongoUrl = 'mongodb://root:password@localhost:27017'
 const mongoSetting = {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }
-mongoClient.Promise = Promise
+mongoClient.Promise = Promise;
+
 app.get('/', function(request, response) {
     mongoClient.connect(mongoUrl, mongoSetting, async (error, client ) => {
         console.log('Connected')
@@ -29,8 +30,8 @@ app.listen(port, () => {
 })
 
 
-export async function getAllPizzas() {
-
-    const response = await fetch('/');
-    return await response.json();
-}
+//export async function getAllPizzas() {
+//
+//    const response = await fetch('/');
+//    return await response.json();
+//}
