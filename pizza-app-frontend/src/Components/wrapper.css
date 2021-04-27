@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&family=Roboto:wght@500&display=swap');
 
 html {
     font-family: 'Indie Flower', cursive;
@@ -22,10 +23,18 @@ h1 {
     font-size: 4rem;
 }
 
-.card1, .card2 {
-    background-color: #fefbe9;
-    width: 400px;
+a:hover {
     color: #f0a04b;
+}
+
+a:focus {
+    color: #f0a04b;
+}
+
+.card1, .card2  {
+    background-color: #fefbe9;
+    width: 300px;
+    color: #183a1d;
     font-size: 1rem;
     flex-direction: row;
     display: flex;
@@ -37,10 +46,17 @@ h1 {
     padding-top: 50px;
     border-radius: 20px;
     margin: 40px;
+    position: relative;
 }
 
 p {
     color: #f0a04b;
+}
+
+.name, .category {
+    font-size: 1.5rem;
+    padding: 1px;
+    color: #183a1d;
 }
 
 .mainWrapper {
@@ -55,7 +71,47 @@ img {
     width: 250px;
 }
 
-.textNameCar1, .textNameCar2, .textCategoryCard2, .textCategoryCard1 {
+.textCard1, .textCard2 {
     display: flex;
     flex-direction: column;
+    color: #183a1d;
+    text-size: 1.5rem;
+}
+
+.dot1, .dot2 {
+    height: 55px;
+    width: 55px;
+    background-color: #f6c453;
+    color: #183a1d;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    bottom: -30px;
+    right: 120px;
+    font-size: 2.5rem;
+}
+
+@media screen and (max-width: 600px) {
+
+    .mainWrapper {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .textCard1, .textCard2 {
+        width: 50%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2{
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
 }
