@@ -13,13 +13,14 @@ class Pizzas extends React.Component{
 
 
  getInfo = ()=> {
-     return this.state.randomisedArray.arrayOfShuffledPizzas[0]
+    console.log(this.state.randomisedArray)
+     return this.state.randomisedArray.arrayOfShuffledPizzas[1]
    }
 
     render(){
     return(
         <div>
-                <p>Pizza Random Array: {this.getInfo}</p>
+                <p>Pizza Random Array: {this.getInfo()}</p>
         </div>
     )
     }
