@@ -7,8 +7,8 @@ class Header extends React.Component {
 
             <nav>
                 <h1>PIZZA APP</h1>
-                <h2>Choose your favourite pizza topping</h2>
-                <h3>Select one topping from bellow:</h3>
+                <h2>Vote for your favourite pizza topping</h2>
+                <h3>Select one from bellow:</h3>
             </nav>
 
         )
