@@ -1,29 +1,39 @@
 import React from 'react';
-import getAllPizzas from './service/service.js';
-import logo from './logo.svg';
 import './App.css';
 
-class Pizzas extends React.Component{
+
+class PizzasApi extends React.Component{
     constructor(props){
     super(props);
-    this.state = {
-        randomisedArray: getAllPizzas()
+    this.state = { apiResponse: "" };
+   }
+
+ callApi() {
+        fetch('http://localhost:3000/')
+            .then(res  => res.json())
+            .then(res => this.setState({ apiResponse: res }))
+            .catch(err => err);
     }
-   }
 
 
- getInfo = ()=> {
-    console.log(this.state.randomisedArray)
-     return this.state.randomisedArray.arrayOfShuffledPizzas[1]
-   }
+
+    componentWillMount() {
+        this.callApi();
+    }
 
     render(){
-    return(
-        <div>
-                <p>Pizza Random Array: {this.getInfo()}</p>
-        </div>
-    )
+       return(
+           <div>
+
+                <p>Pizza Random Array: {JSON.stringify(this.state.apiResponse)}</p>
+           </div>
+       )
     }
 }
 
-export default Pizzas;
+export default PizzasApi;
+
+
+
+
+

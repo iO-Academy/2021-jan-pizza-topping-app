@@ -1,7 +1,8 @@
 export default async function getAllPizzas() {
 
     try{
-        const response = await fetch('http://localhost:3001/');
+        const response = await fetch('http://localhost:3000/');
+
         return await response.json();
 
     } catch(error) {
@@ -10,3 +11,4 @@ export default async function getAllPizzas() {
     }
 
 }
+
