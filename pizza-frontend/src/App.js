@@ -1,37 +1,22 @@
 import React from 'react';
 import './App.css';
+import PizzaApi from "./service/service";
 
-
-class PizzasApi extends React.Component{
-    constructor(props){
-    super(props);
-    this.state = { apiResponse: "" };
-   }
-
- callApi() {
-        fetch('http://localhost:3000/')
-            .then(res  => res.json())
-            .then(res => this.setState({ apiResponse: res }))
-            .catch(err => err);
+class Clicks extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            array: PizzaApi,
+            clickCounter: -1,
+            results: []
+        }
     }
 
+    populateResults = () => {
 
-
-    componentWillMount() {
-        this.callApi();
-    }
-
-    render(){
-       return(
-           <div>
-
-                <p>Pizza Random Array: {JSON.stringify(this.state.apiResponse)}</p>
-           </div>
-       )
     }
 }
 
-export default PizzasApi;
 
 
 
