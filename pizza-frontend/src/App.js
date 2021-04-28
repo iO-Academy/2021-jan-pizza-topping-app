@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import {stringify} from "querystring";
-
+const shuffle = require('shuffle-array')
 
 class PizzasApi extends React.Component{
     constructor(props){
@@ -9,12 +8,13 @@ class PizzasApi extends React.Component{
     this.state = {
         apiResponse: [],
         clickCounter: -1,
-        results: []
+        results: [],
+        pizzaObjectArray: []
      };
    }
 
  callApi() {
-        fetch('http://localhost:3000/')
+        fetch('http://localhost:3001/')
             .then(res  => res.json())
             .then(res => {this.setState({
             apiResponse: res
@@ -29,29 +29,30 @@ class PizzasApi extends React.Component{
     }
 
 
-populateResults = ()=>{
-    let resultsArray = [];
-     for (let i = 0; i < this.state.apiResponse.length - 1; i++) {
-        for (let j = i + 1; j < this.state.apiResponse.length; j++) {
-        let obj1= JSON.stringify(this.state.apiResponse[i]);
-        let obj2 = JSON.stringify(this.state.apiResponse[j]);
-            resultsArray.push(`${obj1}${obj2}`);
-           }
-     }
-         this.setState({
-            clickCounter: this.state.clickCounter+1,
-            results: resultsArray
-         })
+    blah = () => {
+        this.setState({
+          shuffleArray: shuffle(this.state.pizzaObjectArray),
+          }
+        )
      }
 
+    populateResults = () => {
+        this.setState({
+            pizzaObjectArray: this.state.apiResponse.arrayOfPizzas
+        })
+        this.blah()
+    }
+
+
+
     render(){
-    console.log(this.state.apiResponse)
+        console.log(this.state.pizzaObjectArray[0])
         return(
+
             <div>
-                <p>clickCounter: {this.state.clickCounter}</p>
-               <p> results: {this.state.results}</p>
-               <p>Two Randoms: {this.state.results[this.state.clickCounter]}</p>
-               <p><button onClick={this.populateResults} >Click here to begin</button></p>
+                <p>{JSON.stringify(this.state.pizzaObjectArray[0].categories_id)}</p>
+                <p>{JSON.stringify(this.state.pizzaObjectArray[1])}</p>
+                <button onClick={ this.populateResults }> Click me </button>
             </div>
         )
     }
