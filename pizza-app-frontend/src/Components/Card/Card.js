@@ -11,16 +11,18 @@ class Card extends React.Component {
     render() {
         return (
             <Wrapper>
+                <a className="links" tabindex="1" href="#">
+                     <div className="card1">
+                          <img src="/images/mushrooms.jpg"/>
+                            <div className="textCard1">
+                              <p className="name">Name: blablabla</p>
+                             <p className="category">Category:</p>
+                                  <span className="dot1">1</span>
+                            </div>
+                     </div>
+                </a>
 
-                <div className="card1">
-                    <img src="/images/mushrooms.jpg"/>
-                    <div className="textCard1">
-                        <p className="name">Name: blablabla</p>
-                        <p className="category">Category:</p>
-                        <span className="dot1">1</span>
-                    </div>
-                </div>
-
+                <a className="links" tabindex="1" href="#">
                 <div className="card2">
                     <img src="/images/aubergine.jpg"/>
                     <div className="textCard2">
@@ -29,6 +31,7 @@ class Card extends React.Component {
                     </div>
                     <span className="dot2">2</span>
                 </div>
+                </a>
 
 
             </Wrapper>
