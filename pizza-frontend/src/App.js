@@ -50,7 +50,7 @@ class PizzasApi extends React.Component{
         return(
 
             <div>
-                <p>{JSON.stringify(this.state.pizzaObjectArray[0].categories_id)}</p>
+                <p>{JSON.stringify(this.state.pizzaObjectArray.categoriesid)}</p>
                 <p>{JSON.stringify(this.state.pizzaObjectArray[1])}</p>
                 <button onClick={ this.populateResults }> Click me </button>
             </div>
