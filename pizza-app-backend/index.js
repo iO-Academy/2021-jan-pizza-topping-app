@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoClient = require('mongodb').MongoClient;
+const cors = require('cors')
 
 const app = express();
 const port = 3000;
@@ -10,6 +11,20 @@ const mongoSetting = {
     useUnifiedTopology: true
 }
 mongoClient.Promise = Promise;
+
+app.use(cors())
+
+// app.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+//     next();
+// });
+
+app.get('/cors', function(request, response) {
+    console.info('GET cors');
+    response.json;
+})
 
 app.get('/', function(request, response) {
     mongoClient.connect(mongoUrl, mongoSetting, async (error, client ) => {
