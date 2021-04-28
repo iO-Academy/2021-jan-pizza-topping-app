@@ -1,19 +1,20 @@
 import React from 'react';
-import getAllPizzas from './service/service.js';
 import './App.css';
-import { render } from "react-dom"
+
 
 class PizzasApi extends React.Component{
     constructor(props){
     super(props);
-    this.state = { apiResponse: ""};
+    this.state = { apiResponse: "" };
    }
 
  callApi() {
         fetch('http://localhost:3000/')
-            .then(res  => res.text())
+            .then(res  => res.json())
             .then(res => this.setState({ apiResponse: res }))
+            .catch(err => err);
     }
+
 
 
     componentWillMount() {
@@ -23,7 +24,8 @@ class PizzasApi extends React.Component{
     render(){
        return(
            <div>
-                <p>Pizza Random Array: {this.state.apiResponse}</p>
+
+                <p>Pizza Random Array: {JSON.stringify(this.state.apiResponse)}</p>
            </div>
        )
     }
