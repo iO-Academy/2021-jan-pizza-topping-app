@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&family=Roboto:wght@500&display=swap');
+
+html {
+    font-family: 'Indie Flower', cursive;
+    color: #f0a04b;
+    text-align: center;
+    margin-top: 50px;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.h1results {
+    font-size: 4rem;
+    color: #183a1d;
+}
+
+.h2results {
+    color: #183a1d;
+}
+
+.list {
+    color: #183a1d;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+.majorCard {
+    background: #f0a04b;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.bigCard {
+    width: 800px;
+    background: #fefbe9;
+    display: inline-block;
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+
+img {
+    width: 250px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .bigCard {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .h1results {
+        font-size: 2rem;
+    }
+
+    .h2results {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+}

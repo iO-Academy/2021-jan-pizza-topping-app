@@ -6,13 +6,16 @@ html {
     color: #f0a04b;
     text-align: center;
     margin-top: 50px;
-
 }
 
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
 }
 
 body  {
@@ -29,20 +32,12 @@ a {
 }
 
 .links {
-display: inline-block;
+    display: inline-block;
 }
 
 .links:active {
     background: #f0a04b;
 }
-
-/*.links:hover {*/
-/*    color: #f0a04b;*/
-/*}*/
-
-/*a:focus {*/
-/*    color: #e1eedd;*/
-/*}*/
 
 .card1, .card2  {
     background-color: #fefbe9;
@@ -70,14 +65,6 @@ p {
     font-size: 1.5rem;
     padding: 1px;
     color: #183a1d;
-}
-
-.mainWrapper {
-    display: flex;
-    size: 500px;
-    flex-direction: row;
-    justify-content: center;
-
 }
 
 img {
