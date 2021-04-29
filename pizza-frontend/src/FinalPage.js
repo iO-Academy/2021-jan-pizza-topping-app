@@ -26,7 +26,8 @@ render(){
                     {this.state.shuffleArray.map(pizza => {
                         return(
                         <p> {pizza.toppingsname} </p>
-                        <p>{this.state.[pizza.toppingsname]} votes </p>
+                        <p>You gave this item: {this.state.[pizza.toppingsname]} votes</p>
+                        <p> This item has: {pizza.votes} votes</p>
                         <p><img src={pizza.toppingsimg} /> </p>
                         </div>
 
