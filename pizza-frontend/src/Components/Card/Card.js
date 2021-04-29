@@ -1,5 +1,4 @@
 import React from 'react';
-import './card.css';
 import Wrapper from "../Wrapper";
 import Header from "../Header/Header";
 
