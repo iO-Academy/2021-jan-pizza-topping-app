@@ -42,40 +42,20 @@ class PizzasApi extends React.Component {
         this.setShuffleArray()
     }
 
-    clickCounterFunction = (pizza)=> {
+    clickCounterFunction = async (pizza)=> {
          this.setState({
          [pizza.toppingsname]: this.state[pizza.toppingsname]+1 || 1,
          clickCounter: this.state.clickCounter+1 || 1
          })
          this.setShuffleArray()
-
-        async function updatePost (pizza) {
-                         const requestOptions = {
-                             method: 'PUT',
-                             headers: { 'Content-Type': 'application/json' },
-                             body: JSON.stringify({ pizza })
-                         };
-                         const response = await fetch('http://localhost:3001/:categoriesid', requestOptions);
-                         const data = await response.json();
-                     }
-//fetch request
-//to send stuff to the database
-
+          const requestOptions = {
+             method: 'PUT',
+             headers: { 'Content-Type': 'application/json' },
+             body: JSON.stringify(pizza)
+         };
+         const response = await fetch('http://localhost:3001/'+ pizza.categoriesid, requestOptions);
+         const data = await response.json();
     }
-
-//     updateVotes = ()=>{
-//        async function updatePost () {
-//                const requestOptions = {
-//                    method: 'PUT',
-//                    headers: { 'Content-Type': 'application/json' },
-//                    body: JSON.stringify({ pizza })
-//                };
-//                const response = await fetch('http://localhost:3001/:categoriesid', requestOptions);
-//                const data = await response.json();
-//            }
-//            updatePost();
-//        };
-
 
     render(){
    //if(this.state.clickCounter < noOfCombos){ } else{<FinalPage />}
