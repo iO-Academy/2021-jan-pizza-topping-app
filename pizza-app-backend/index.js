@@ -1,8 +1,9 @@
 const express = require('express');
 const mongoClient = require('mongodb').MongoClient;
+const cors = require('cors')
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 const mongoUrl = 'mongodb://root:password@localhost:27017'
 const mongoSetting = {
@@ -10,6 +11,12 @@ const mongoSetting = {
     useUnifiedTopology: true
 }
 mongoClient.Promise = Promise;
+app.use(cors())
+
+app.get('/cors', function(request, response) {
+    console.info('GET cors');
+    response.json;
+})
 
 app.get('/', function(request, response) {
     mongoClient.connect(mongoUrl, mongoSetting, async (error, client ) => {
@@ -18,9 +25,9 @@ app.get('/', function(request, response) {
         const individualPizza = await pizzaCollection.find({}).toArray()
 
         response.send({
-            success: true,
-            message: 'Successfully retrieved all the individual pizzas',
-            data: individualPizza
+//            success: true,
+//            message: 'Successfully retrieved all the randomised pizzas',
+              arrayOfPizzas: individualPizza
         })
     })
 })
@@ -50,8 +57,3 @@ app.listen(port, () => {
 })
 
 
-//export async function getAllPizzas() {
-//
-//    const response = await fetch('/');
-//    return await response.json();
-//}
