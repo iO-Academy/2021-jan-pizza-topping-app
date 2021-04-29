@@ -1,0 +1,23 @@
+{
+  "name": "2021-jan-pizza-topping-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iO-Academy/2021-jan-pizza-topping-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iO-Academy/2021-jan-pizza-topping-app/issues"
+  },
+  "homepage": "https://github.com/iO-Academy/2021-jan-pizza-topping-app#readme",
+  "dependencies": {
+    "create-react-app": "^4.0.3",
+    "express": "^4.17.1"
+  }
+}
