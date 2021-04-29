@@ -9,7 +9,8 @@ class PizzasApi extends React.Component {
         this.state = {
             apiResponse: [],
             results: [],
-            pizzaObjectArray: []
+            pizzaObjectArray: [],
+            clickCounter: 0
         };
         this.callApi()
     }
@@ -43,12 +44,24 @@ class PizzasApi extends React.Component {
 
     clickCounterFunction = (pizza)=> {
          this.setState({
-         [pizza.toppingsname]: this.state[pizza.toppingsname]+1 || 1
+         [pizza.toppingsname]: this.state[pizza.toppingsname]+1 || 1,
+         clickCounter: this.state.clickCounter+1 || 1
          })
 //put[pizza.toppingsname]
+//        method: 'PUT'[this.state[pizza.toppingsname]]
+        this.updateVotes()
     }
 
+//     updateVotes = ()=>{
+//     this.setState({
+//
+//     })
+//      scoreBoard: this.state.scoreBoard + [[pizza.toppingsname] => [this.state.pizza.toppingsname]]
+//        }
+
     render(){
+   //if(this.state.clickCounter < noOfCombos){ } else{<FinalPage />}
+
         console.log(this.state.pizzaObjectArray[0])
          if("shuffleArray" in this.state)
         {
@@ -78,5 +91,9 @@ export default PizzasApi;
 
 
 
-
+//1. Send put request to the back end to update votes on db
+//2. find out how to show votes from db on page
+//3. complete if statement so that once you run out of images you get re-directed to the endpage
+//4. display items in order from most to least votes
+//5. styling
 
