@@ -40,6 +40,7 @@ class PizzasApi extends React.Component {
         })
         this.setShuffleArray()
     }
+
     clickCounterFunction = (pizza)=> {
          this.setState({
          [pizza.toppingsname]: this.state[pizza.toppingsname]+1 || 1
@@ -60,14 +61,17 @@ class PizzasApi extends React.Component {
                     <p><img src={pizza.toppingsimg} /> </p>
                     <p>This Item has {this.state.[pizza.toppingsname]} votes </p>
                     </div>
+
                     )
                 })}
 
             </div>
         )}
+
          else { return <div> </div> }
     }
 }
+
 
 
 export default PizzasApi;
