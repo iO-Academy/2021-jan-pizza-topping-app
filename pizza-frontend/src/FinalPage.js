@@ -15,7 +15,7 @@ showInOrder = ()=>{
     return this.state.[pizza.toppingsname]
 
 }
-
+//localStorage.getItem(this.state)
 
 render(){
     return(
@@ -25,7 +25,8 @@ render(){
                 <div>
                     {this.state.shuffleArray.map(pizza => {
                         return(
-                        <p> {pizza.toppingsname} </p>
+                        <p>This is the final page</p>
+                        <p> {localStorage.getItem(this.state.pizza.toppingsname)} </p>
                         <p>You gave this item: {this.state.[pizza.toppingsname]} votes</p>
                         <p> This item has: {pizza.votes} votes</p>
                         <p><img src={pizza.toppingsimg} /> </p>
