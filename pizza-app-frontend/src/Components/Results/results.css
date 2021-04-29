@@ -21,10 +21,12 @@ html {
 
 .h2results {
     color: #183a1d;
+    padding-bottom: 50px;
 }
 
 .list {
     color: #183a1d;
+    font-size: 2rem;
 }
 
 a {
