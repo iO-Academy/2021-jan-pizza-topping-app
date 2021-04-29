@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "create-react-class": "^15.7.0",
+    "shuffle": "^0.2.5",
+    "shuffle-array": "^1.0.1"
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.6.6"
+  }
+}

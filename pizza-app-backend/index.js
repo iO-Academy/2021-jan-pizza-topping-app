@@ -25,6 +25,26 @@ app.get('/', function(request, response) {
     })
 })
 
+
+app.put('/toppings/:id', function(request, response){
+    toppingName = request.params.toppingsname
+    toppingsname.forEach((topping) => {
+        if(topping.toppingsname == toppingName) {
+            topping.votes = +1
+        }
+
+    })
+
+    response.send({
+        sucess: true,
+        message: 'pizza topping has a vote',
+        statusCode: 200,
+        data: []
+    })
+
+})
+
+
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
 })
