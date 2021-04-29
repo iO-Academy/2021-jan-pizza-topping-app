@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 const shuffle = require('shuffle-array')
-
+import Wrapper from "/Wrapper/Wrapper.js";
+import Header from "/Header/Header.js";
+import Footer from '/Components/Footer/Footer'
 
 class PizzasApi extends React.Component {
     constructor(props) {
@@ -69,11 +71,15 @@ class PizzasApi extends React.Component {
             <div>
                 {this.state.shuffleArray.slice(0,2).map(pizza => {
                     return(
+                    <div>
+                    <Header />
                     <div onClick= {()=> {this.clickCounterFunction(pizza)}}>
                     <p> {pizza.toppingsname} </p>
                     <p><img src={pizza.toppingsimg} /> </p>
                     <p>This Item has {this.state.[pizza.toppingsname]} votes </p>
-                    <a href="http://localhost:3000/results">See final Results</a>
+                    <button href="http://localhost:3000/results">See final Results</button>
+                    </div>
+                    <Footer />
                     </div>
 
                     )
@@ -100,62 +106,44 @@ export default PizzasApi;
 //5. styling
 
 //link to final page
-Card:
-import React from 'react';
-import './card.css';
-import Wrapper from "../Wrapper";
-import Header from "../Header/Header";
-
-
-class Card extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-
-            <Wrapper>
-                <div className="header">
-                <Header />
-                </div>
-                <a className="links" tabindex="1" id="hover" href="#">
-                     <div className="card1">
-                          <img src="/images/mushrooms.jpg"/>
-                            <div className="textCard1">
-                              <p className="name">Name: blablabla</p>
-                             <p className="category">Category:</p>
-                                  <span className="dot1">1</span>
-                            </div>
-                     </div>
-                </a>
-
-                <a className="links" tabindex="1" href="#">
-                <div className="card2">
-                    <img src="/images/aubergine.jpg"/>
-                    <div className="textCard2">
-                        <p className="name">Name: blablabla</p>
-                        <p className="category">Category:</p>
-                    </div>
-                    <span className="dot2">2</span>
-                </div>
-                </a>
-
-
-            </Wrapper>
-
-        )
-    }
-}
-
-export default Card;
 
 
 
-
-
-
-wrapperCSS:
-
-
-card.css:
+//
+//    render() {
+//        return (
+//
+//            <Wrapper>
+//                <div className="header">
+//                <Header />
+//                </div>
+//                <a className="links" tabindex="1" id="hover" onClick= {()=> {this.clickCounterFunction(pizza)}}>
+//                     <div className="card1">
+//                          <img src={pizza.toppingsimg} />
+//                            <div className="textCard1">
+//                              <p className="name">Name: {pizza.toppingsname}</p>
+//                             <p className="category">Category: {pizza.categoriesname}</p>
+//                                  <span className="dot1">1</span>
+//                            </div>
+//                     </div>
+//                </a>
+//
+//                <a className="links" tabindex="1" onClick= {()=> {this.clickCounterFunction(pizza)}}>
+//                <div className="card2">
+//                    <img src={pizza.toppingsimg}/>
+//                    <div className="textCard2">
+//                        <p className="name">Name: {pizza.toppingsname}</p>
+//                        <p className="category">Category: {pizza.categoriesname}</p>
+//                    </div>
+//                    <span className="dot2">2</span>
+//                </div>
+//                </a>
+//
+//
+//            </Wrapper>
+//
+//        )
+//    }
+//}
+//
+//export default Card;
