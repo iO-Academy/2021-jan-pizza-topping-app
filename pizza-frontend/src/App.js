@@ -8,7 +8,6 @@ class PizzasApi extends React.Component {
         super(props);
         this.state = {
             apiResponse: [],
-            clickCounter: -1,
             results: [],
             pizzaObjectArray: []
         };
@@ -41,20 +40,32 @@ class PizzasApi extends React.Component {
         })
         this.setShuffleArray()
     }
-
+    clickCounterFunction = (pizza)=> {
+         this.setState({
+         [pizza.toppingsname]: this.state[pizza.toppingsname]+1 || 1
+         })
+//put[pizza.toppingsname]
+    }
 
     render(){
         console.log(this.state.pizzaObjectArray[0])
-        // if("shuffleArray" in this.state)
+         if("shuffleArray" in this.state)
+        {
         return(
-
             <div>
-                {this.state.shuffleArray.map(pizza => {
-                    return <p> {pizza.categoriesname} </p>
+                {this.state.shuffleArray.slice(0,2).map(pizza => {
+                    return(
+                    <div onClick= {()=> {this.clickCounterFunction(pizza)}}>
+                    <p> {pizza.toppingsname} </p>
+                    <p><img src={pizza.toppingsimg} /> </p>
+                    <p>This Item has {this.state.[pizza.toppingsname]} votes </p>
+                    </div>
+                    )
                 })}
+
             </div>
-        )
-        // else { return <div> </div> }
+        )}
+         else { return <div> </div> }
     }
 }
 
