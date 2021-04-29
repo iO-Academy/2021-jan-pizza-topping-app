@@ -1,6 +1,7 @@
 import React from 'react';
-import './card.css'
+import './card.css';
 import Wrapper from "../Wrapper";
+import Header from "../Header/Header";
 
 
 class Card extends React.Component {
@@ -10,7 +11,11 @@ class Card extends React.Component {
 
     render() {
         return (
+
             <Wrapper>
+                <div className="header">
+                <Header />
+                </div>
                 <a className="links" tabindex="1" id="hover" href="#">
                      <div className="card1">
                           <img src="/images/mushrooms.jpg"/>
