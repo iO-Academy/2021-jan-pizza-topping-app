@@ -1,18 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Header from './Components/Header/Header.js';
 import Footer from "./Components/Footer/Footer";
 import Card from "./Components/Card/Card";
+import Routes from "./Components/Routes/Routes";
+
+
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <Card />
-    <Footer />
+
+      <Routes />
+
+
+
+
   </React.StrictMode>,
   document.getElementById('root')
 );
