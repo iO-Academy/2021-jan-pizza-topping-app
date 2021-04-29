@@ -15,6 +15,8 @@ class PizzasApi extends React.Component {
         this.callApi()
     }
 
+//localStorage.setItem(this.state);
+
     callApi() {
         fetch('http://localhost:3001/')
             .then(res => res.json())
