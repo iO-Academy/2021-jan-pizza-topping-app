@@ -150,4 +150,12 @@ class Card extends React.Component {
 
 export default Card;
 
-Header:
+
+
+
+
+
+wrapperCSS:
+
+
+card.css:
