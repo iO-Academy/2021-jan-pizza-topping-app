@@ -18,7 +18,7 @@ class Card extends React.Component {
                 </div>
                 <a className="links" tabindex="1" id="hover" href="#">
                      <div className="card1">
-                          <img src="/images/mushrooms.jpg"/>
+                          <img src="/images/mushrooms.jpeg"/>
                             <div className="textCard1">
                               <p className="name">Name: blablabla</p>
                              <p className="category">Category:</p>
@@ -29,7 +29,7 @@ class Card extends React.Component {
 
                 <a className="links" tabindex="1" href="#">
                 <div className="card2">
-                    <img src="/images/aubergine.jpg"/>
+                    <img src="/images/aubergine.jpeg"/>
                     <div className="textCard2">
                         <p className="name">Name: blablabla</p>
                         <p className="category">Category:</p>
