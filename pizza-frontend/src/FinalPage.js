@@ -47,5 +47,5 @@ render(){
 }
 }
 
-export default ClickCounter;
+export default FinalPage;
 
