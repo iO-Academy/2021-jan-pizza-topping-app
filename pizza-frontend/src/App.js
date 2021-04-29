@@ -42,21 +42,25 @@ class PizzasApi extends React.Component {
         this.setShuffleArray()
     }
 
-
     render(){
         console.log(this.state.pizzaObjectArray[0])
-        // if("shuffleArray" in this.state)
-        return(
-
+        if("shuffleArray" in this.state)
+        {return(
             <div>
-                {this.state.shuffleArray.map(pizza => {
-                    return <p> {pizza.categoriesname} </p>
+                {this.state.shuffleArray.slice(0, 2).map(pizza => {
+                    return(
+                        <div>
+                            <p> {pizza.toppingsname} </p>
+                            <p><img src={pizza.toppingsimg} /> </p>
+                        </div>
+                    )
                 })}
             </div>
-        )
-        // else { return <div> </div> }
+        )}
+        else { return <div> </div> }
     }
 }
+
 
 
 export default PizzasApi;
