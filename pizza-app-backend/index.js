@@ -33,6 +33,7 @@ app.get('/', function(request, response) {
     })
 })
 
+
 app.put('/:categoriesid', function(request, response) {    // the id is a string not an object - it will not work
     let categoryId = parseInt(request.params.categoriesid);
 mongoClient.connect(mongoUrl, mongoSetting, async (error, client) => {
