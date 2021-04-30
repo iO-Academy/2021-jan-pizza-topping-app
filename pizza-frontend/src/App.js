@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-const shuffle = require('shuffle-array')
-import Wrapper from "/Wrapper/Wrapper.js";
-import Header from "/Header/Header.js";
-import Footer from '/Components/Footer/Footer'
+const shuffle = require('shuffle-array');
+import Wrapper from "./Components/Wrapper/Wrapper.js";
+import Header from "./Components/Header/Header.js";
+import Footer from './Components/Footer/Footer';
 
 class PizzasApi extends React.Component {
     constructor(props) {
@@ -70,7 +70,23 @@ class PizzasApi extends React.Component {
         return(
             <div>
                 {this.state.shuffleArray.slice(0,2).map(pizza => {
+                   //if shuffleArray[0]{} else{}
                     return(
+                    //            <Wrapper>
+                    //                <div className="header">
+                    //                <Header />
+                    //                </div>
+                    //                <a className="links" tabindex="1" id="hover" onClick= {()=> {this.clickCounterFunction(pizza)}}>
+                    //                     <div className="card1">
+                    //                          <img src={pizza.toppingsimg} />
+                    //                            <div className="textCard1">
+                    //                              <p className="name">Name: {pizza.toppingsname}</p>
+                    //                             <p className="category">Category: {pizza.categoriesname}</p>
+                    //                                  <span className="dot1">1</span>
+                    //                            </div>
+                    //                     </div>
+                    //                </a></Wrapper>
+
                     <div>
                     <Header />
                     <div onClick= {()=> {this.clickCounterFunction(pizza)}}>
@@ -81,8 +97,22 @@ class PizzasApi extends React.Component {
                     </div>
                     <Footer />
                     </div>
-
                     )
+                    //} else{
+//                <a className="links" tabindex="1" onClick= {()=> {this.clickCounterFunction(pizza)}}>
+//                <div className="card2">
+//                    <img src={pizza.toppingsimg}/>
+//                    <div className="textCard2">
+//                        <p className="name">Name: {pizza.toppingsname}</p>
+//                        <p className="category">Category: {pizza.categoriesname}</p>
+//                    </div>
+//                    <span className="dot2">2</span>
+//                </div>
+//                </a>
+//
+//
+//            </Wrapper>
+                    //}
                 })
                 }
 
