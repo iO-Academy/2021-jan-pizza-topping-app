@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoClient = require('mongodb').MongoClient;
-const cors = require('cors')
+const cors = require('cors');
+const objectId = require('mongodb').ObjectId;
 
 const app = express();
 const port = 3001;
@@ -33,23 +34,21 @@ app.get('/', function(request, response) {
 })
 
 
-app.put('/toppings/:id', function(request, response){
-    toppingName = request.params.toppingsname
-    toppingsname.forEach((topping) => {
-        if(topping.toppingsname == toppingName) {
-            topping.votes = +1
-        }
-
+app.put('/:categoriesid', function(request, response) {    // the id is a string not an object - it will not work
+    let categoryId = parseInt(request.params.categoriesid);
+mongoClient.connect(mongoUrl, mongoSetting, async (error, client) => {
+        let remindersCollection = client.db('pizza-app').collection('pizza-toppings')
+       let foo = await remindersCollection.updateOne(
+            { categoriesid: categoryId },
+            { $inc: { votes: 1 } }
+            )
+            response.send({
+            success: true,
+            message: `Successfully marked task as completed`,
+            statusCode: 200
+        })
     })
-
-    response.send({
-        sucess: true,
-        message: 'pizza topping has a vote',
-        statusCode: 200,
-        data: []
     })
-
-})
 
 
 app.listen(port, () => {
